@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
-import {useParams} from 'react-router-dom'
+import {useParams, useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import SvgIcon from "../components/SvgIcon"
 import { CHANGE_CARD, DELETE_CARD } from "../store/types"
+
 
 const DetailPage = () => {
     const [form, setForm] = useState(false)
@@ -10,7 +11,7 @@ const DetailPage = () => {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
     const [desc, setDesc] = useState('')
-
+    const navigate = useNavigate()
    
     const data = useSelector(s => {
         let obj
@@ -36,7 +37,7 @@ const DetailPage = () => {
             payload: data.id
         })
 
-        window.location.pathname = '/'
+        navigate('/')
     }
 
     const changeCard = () => {

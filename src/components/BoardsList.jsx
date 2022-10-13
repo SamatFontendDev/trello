@@ -6,9 +6,11 @@ const BoardsList = () => {
     const boards = useSelector(s => s.boards.boards)
 
     return(
-        <ul className="board__list">
-            {boards.map((item, index) => <Board key={item.id} data={item} index={index} />)}
-        </ul>
+        <div className="board__list--wrap">
+            <ul className="board__list">
+                {boards.map((item, index) => <Board key={item.id} data={item} index={index} />)}
+            </ul>
+        </div>
     )
 }
 

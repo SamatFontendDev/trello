@@ -53,10 +53,15 @@ ul,li{
   text-align: center;
   z-index: 1;
 }
+.board__list--wrap{
+  padding-bottom: 10px;
+  overflow-x: auto;
+}
 .board__list{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
+  min-width: 660px;
 }
 
 .board{
